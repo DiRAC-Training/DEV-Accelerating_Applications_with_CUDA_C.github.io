@@ -1,1 +1,1 @@
-# DEV-Accelerating_Applications_with_CUDA_C.github.io
+# DEV Accelerating Applications with CUDA C
