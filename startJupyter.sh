@@ -16,5 +16,8 @@ echo " "
 echo "Please run the following command in a terminal window on you local computer:"
 echo "  ssh -L 9562:${compute_name}:9562 -fN [YOUR-ACCONT-NAME]@login-e-2.hpc.cam.ac.uk"
 
+#change dir to notebooks
+cd notebooks
+
 jupyter notebook --no-browser --ip=$compute_ip --port=9562
 #jupyter notebook --help-all
