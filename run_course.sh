@@ -80,7 +80,7 @@ if [ "${nodes_available}" ]; then
 		## No resevation was set up.
 		srun -t $course_duration --nodes=$course_nodes --gres=$course_node_type --ntasks-per-node=$course_tasks --cpus-per-task=$course_cpu_tasks --partition=$partition_used --account=$course_project --pty -u bash -i
 	fi
-else
+#else
 	## No nodes were available
 	#srun -t $course_duration --nodes=$course_nodes --gres=$course_node_type --ntasks-per-node=$course_tasks --cpus-per-task=$course_cpu_tasks --partition=$course_partition1 --account=$course_project ./startJupyter.sh
 fi
