@@ -72,12 +72,16 @@ else
 fi
 
 if [ "${nodes_available}" ]; then
+	## Nodes are available
 	if [ "${slurm_resevation}" ]; then
+		## A resevation is available
 		srun -t $course_duration --reservation=$slurm_resevation --nodes=$course_nodes --gres=$course_node_type --ntasks-per-node=$course_tasks --cpus-per-task=$course_cpu_tasks --partition=$partition_used --account=$course_project --pty -u bash -i
 	else
+		## No resevation was set up.
 		srun -t $course_duration --nodes=$course_nodes --gres=$course_node_type --ntasks-per-node=$course_tasks --cpus-per-task=$course_cpu_tasks --partition=$partition_used --account=$course_project --pty -u bash -i
 	fi
 else
-	srun -t $course_duration --nodes=$course_nodes --gres=$course_node_type --ntasks-per-node=$course_tasks --cpus-per-task=$course_cpu_tasks --partition=$course_partition1 --account=$course_project ./startJupyter.sh
+	## No nodes were available
+	#srun -t $course_duration --nodes=$course_nodes --gres=$course_node_type --ntasks-per-node=$course_tasks --cpus-per-task=$course_cpu_tasks --partition=$course_partition1 --account=$course_project ./startJupyter.sh
 fi
 
